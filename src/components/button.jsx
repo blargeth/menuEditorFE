@@ -1,7 +1,8 @@
 import React from 'react';
+  
 
-var Button = () => {
-    return <div> hi im a div </div>
+var Button = (props) => {
+    return <button onClick={props.clickFunc}> click me for get request! </button>
 }
 
 export default Button;
