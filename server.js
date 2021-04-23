@@ -11,6 +11,38 @@ app.get('/', function (req, res) {
   res.send('hello worlddd')
 })
 
+app.get('/menuTest', function (req, res) {
+  res.json({
+    "sections": [
+    {
+    "name": "Lunch Specials",
+    "items": [
+    {
+    "title": "Chicken Over Rice",
+    "price": 12,
+    "options": [
+    {
+    "name": "Add Rice",
+    "choices": [
+    {
+    "name": "White Rice",
+    "price": 2
+    },
+    {
+    "name": "Brown Rice",
+    "price": 2
+    }
+    ]
+    }
+    ]
+    }
+    ],
+    }
+    ]
+    })
+})
+
+
 const port = 3000;
 
 app.listen(port, () => {
