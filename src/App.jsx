@@ -28,17 +28,17 @@ const App = () => {
       <h1>Menu Editor Component</h1>
       <div className="tableComponent">
         <div className="col1">
-          <ListComponent title={"Menu Selection"} items={data.sections}/>
+          <ListComponent title={"Menu Selection"} items={data.sections} currCategory={"sections"} nextCategory={"items"}/>
         </div>
         <div className="col2">
-          <ListComponent title={"Items"}/>
+          <ListComponent title={"Items"} items={data.sections?.items} nextCategory={"options"}/>
         </div>
-        <div className="col3">
-          <ListComponent title={"Item Options"}/>
+        {/* <div className="col3">
+          <ListComponent title={"Item Options"} items={data.sections.items.options} nextCategory={"choices"}/>
         </div>
         <div className="col4">
-          <ListComponent title={"Option Choices"}/>
-        </div>
+          <ListComponent title={"Option Choices"} items={data.sections.items.options}/>
+        </div> */}
       </div>
     </div>
   );
