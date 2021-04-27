@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 
-const ListComponent = () => {
-
+const ListComponent = (props) => {
   return (
     <table>
-    <thead>
-    <tr>
-        <th>Product Name</th>
-    </tr>
-    </thead>
-    <tbody>
+      <thead>
+        <tr>
+          <th className="menuTitle">
+            title from props
+            <button>Add</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
         <tr>testing</tr>
         <tr>testing</tr>
         <tr>testing</tr>
-    </tbody>
-</table>
+      </tbody>
+    </table>
   );
 };
 

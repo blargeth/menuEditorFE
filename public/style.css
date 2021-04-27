@@ -16,3 +16,7 @@
     .col2 { grid-area: 1 / 2 / 2 / 3; }
     .col3 { grid-area: 1 / 3 / 2 / 4; }
     .col4 { grid-area: 1 / 4 / 2 / 5; }
+
+.menuTitle {
+    font:bold;
+}

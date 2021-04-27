@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import ListComponent from './listComponent';
 
 const App = () => {
+
+  //hooks
+
+  //useEffect hook to initialize data from API endpoint
+
   return (
     <div className="menuEditor">
       <h1>Menu Editor Component</h1>
