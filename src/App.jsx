@@ -16,7 +16,7 @@ const App = () => {
     i: 0,
     o: 0,
     c: 0
-  });   //use Object.assign
+  });
 
   //helpers
   const getData = () => {
@@ -37,23 +37,31 @@ const App = () => {
     if (columnName === "selections") {
       let selectedItems = data.sections[listNumber].items.map((item) => item.title);
       setItemsSelected(selectedItems);
-      setIndexTracker(prevState => Object.assign(prevState, {s: listNumber}))
+      setIndexTracker({
+        s: listNumber,
+        i: 0,
+        o: 0,
+        c: 0
+      })
       setOptionsSelected([])
       setChoicesSelected([])
-
     }
 
     if (columnName === "items") {
-      let selectedOptions = data.sections[indexTracker.s].items[indexTracker.i].options.map((option) => option.name);
+      setIndexTracker(prevState => {return {...prevState, i: listNumber}})
+      let selectedOptions = data.sections[indexTracker.s].items[listNumber].options.map((option) => option.name);
       setOptionsSelected(selectedOptions);
-      setIndexTracker(prevState => Object.assign(prevState, {i: listNumber}))
       setChoicesSelected([])
     }
 
     if (columnName === "options") {
-      let selectedChoices = data.sections[indexTracker.s].items[indexTracker.i].options[indexTracker.o].choices.map((item) => item.name);
+      let selectedChoices = data.sections[indexTracker.s].items[indexTracker.i].options[listNumber].choices.map((item) => item.name);
       setChoicesSelected(selectedChoices);
-      setIndexTracker(prevState => Object.assign(prevState, {c: listNumber}))
+      setIndexTracker(prevState => {return {...prevState, o: listNumber}})
+    }
+
+    if (columnName === "choices") {
+      setIndexTracker(prevState => {return {...prevState, c: listNumber}});
     }
 
   };

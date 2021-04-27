@@ -18,9 +18,13 @@
     .col4 { grid-area: 1 / 4 / 2 / 5; }
 
 .menuTitle {
-    font:bold;
+    font-weight:bold;
 }
 
 .table {
     border: 1px solid black;
+}
+
+.selected {
+    background-color: coral;
 }

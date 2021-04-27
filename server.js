@@ -53,6 +53,51 @@ app.get("/menuTest", function (req, res) {
                   },
                 ],
               },
+              {
+                name: "Cheeses",
+                choices: [
+                  {
+                    name: "Mozzerella",
+                    price: 2,
+                  },
+                  {
+                    name: "Four cheeses",
+                    price: 2,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            title: "Subway Grinder Hero",
+            price: 12,
+            options: [
+              {
+                name: "Kind",
+                choices: [
+                  {
+                    name: "Meatball",
+                    price: 2,
+                  },
+                  {
+                    name: "Ham and Cheese",
+                    price: 2,
+                  },
+                ],
+              },
+              {
+                name: "Lettuce",
+                choices: [
+                  {
+                    name: "Yes",
+                    price: 2,
+                  },
+                  {
+                    name: "No",
+                    price: 2,
+                  },
+                ],
+              },
             ],
           }
         ],

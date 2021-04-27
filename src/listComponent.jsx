@@ -9,12 +9,11 @@ const ListComponent = (props) => {
         {props.title}
         <button>Add</button>
       </div>
-      <div className="table">
+      <div>
         {props.items.map((item, i) => {
           c += 1;
           return (
-            <div
-              className={"table"}
+            <div className="table"
               onClick={(e) => {
                 props.handleSelection(e, props.columnName, i);
               }}
