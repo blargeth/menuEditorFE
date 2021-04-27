@@ -1,47 +1,46 @@
-const express = require('express')
-const path = require('path');
+const express = require("express");
+const path = require("path");
 
 const app = express();
 
-app.use('/', express.static(path.join(__dirname, 'public')))
+app.use("/", express.static(path.join(__dirname, "public")));
 app.use(express.json());
 
 // respond with "hello world" when a GET request is made to the homepage
-app.get('/', function (req, res) {
-  res.send('hello worlddd')
-})
+app.get("/", function (req, res) {
+  res.send("hello worlddd");
+});
 
-app.get('/menuTest', function (req, res) {
+app.get("/menuTest", function (req, res) {
   res.json({
-    "sections": [
-    {
-    "name": "Lunch Specials",
-    "items": [
-    {
-    "title": "Chicken Over Rice",
-    "price": 12,
-    "options": [
-    {
-    "name": "Add Rice",
-    "choices": [
-    {
-    "name": "White Rice",
-    "price": 2
-    },
-    {
-    "name": "Brown Rice",
-    "price": 2
-    }
-    ]
-    }
-    ]
-    }
+    sections: [
+      {
+        name: "Lunch Specials",
+        items: [
+          {
+            title: "Chicken Over Rice",
+            price: 12,
+            options: [
+              {
+                name: "Add Rice",
+                choices: [
+                  {
+                    name: "White Rice",
+                    price: 2,
+                  },
+                  {
+                    name: "Brown Rice",
+                    price: 2,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
     ],
-    }
-    ]
-    })
-})
-
+  });
+});
 
 const port = 3000;
 
