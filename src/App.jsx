@@ -11,6 +11,13 @@ const App = () => {
   const [options, setOptionsSelected] = useState([]);
   const [choices, setChoicesSelected] = useState([]);
 
+  const [indexTracker, setIndexTracker] = useState({
+    s: 0,
+    i: 0,
+    o: 0,
+    c: 0
+  });   //use Object.assign
+
   //helpers
   const getData = () => {
     axios
@@ -30,6 +37,23 @@ const App = () => {
     if (columnName === "selections") {
       let selectedItems = data.sections[listNumber].items.map((item) => item.title);
       setItemsSelected(selectedItems);
+      setIndexTracker(prevState => Object.assign(prevState, {s: listNumber}))
+      setOptionsSelected([])
+      setChoicesSelected([])
+
+    }
+
+    if (columnName === "items") {
+      let selectedOptions = data.sections[indexTracker.s].items[indexTracker.i].options.map((option) => option.name);
+      setOptionsSelected(selectedOptions);
+      setIndexTracker(prevState => Object.assign(prevState, {i: listNumber}))
+      setChoicesSelected([])
+    }
+
+    if (columnName === "options") {
+      let selectedChoices = data.sections[indexTracker.s].items[indexTracker.i].options[indexTracker.o].choices.map((item) => item.name);
+      setChoicesSelected(selectedChoices);
+      setIndexTracker(prevState => Object.assign(prevState, {c: listNumber}))
     }
 
   };

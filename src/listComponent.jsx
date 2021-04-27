@@ -1,7 +1,7 @@
 import React from "react";
 
 const ListComponent = (props) => {
-  console.log(props);
+
   let c = 0;
   return (
     <div>

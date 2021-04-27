@@ -77,6 +77,19 @@ app.get("/menuTest", function (req, res) {
                   },
                 ],
               },
+              {
+                name: "Add bread",
+                choices: [
+                  {
+                    name: "Toast",
+                    price: 1,
+                  },
+                  {
+                    name: "Non Toasted Bread",
+                    price: 1,
+                  },
+                ],
+              }
             ],
           },
         ],
