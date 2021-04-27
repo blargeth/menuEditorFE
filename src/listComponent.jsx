@@ -1,22 +1,15 @@
 import React, { useState } from "react";
 
 const ListComponent = (props) => {
+    console.log(props)
   return (
-    <table>
-      <thead>
-        <tr>
-          <th className="menuTitle">
-            title from props
-            <button>Add</button>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>testing</tr>
-        <tr>testing</tr>
-        <tr>testing</tr>
-      </tbody>
-    </table>
+      <div>
+        <div className="menuTitle table">
+        {props.title}
+        <button>Add</button>
+        </div>
+        <div className="table"> test</div>
+    </div>
   );
 };
 
