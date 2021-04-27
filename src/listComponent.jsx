@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 const ListComponent = (props) => {
   console.log(props);
+  let c = 0;
   return (
     <div>
       <div className="menuTitle table">
@@ -9,13 +10,16 @@ const ListComponent = (props) => {
         <button>Add</button>
       </div>
       <div className="table">
-        {props[props.nextCategory] === undefined ? (
-          <div> **No items** </div>
-        ) : (
-          props[props.nextCategory].map((item) => {
-            return <div>{item.name}</div>;
+        {
+          props.items.map((item) => {
+            c += 1;
+            return (
+              <div className={"table"} onClick={(e) => {props.handleSelection(e)}} key={c}>
+                {item}
+              </div>
+            );
           })
-        )}
+        }
       </div>
     </div>
   );

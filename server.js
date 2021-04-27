@@ -38,6 +38,30 @@ app.get("/menuTest", function (req, res) {
           },
         ],
       },
+      {
+        name: "Breakfast Specials",
+        items: [
+          {
+            title: "Eggs and Sausage",
+            price: 5,
+            options: [
+              {
+                name: "Egg Type",
+                choices: [
+                  {
+                    name: "Sunnyside Up",
+                    price: 1,
+                  },
+                  {
+                    name: "Scrambled",
+                    price: 1,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
     ],
   });
 });
