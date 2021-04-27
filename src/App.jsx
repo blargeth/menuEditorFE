@@ -7,8 +7,9 @@ const App = () => {
   //hooks
   const [data, setData] = useState({});
   const [selections, setSelections] = useState([]);
-  const [itemSelected, setItemSelected] =useState(null)
-
+  const [items, setItemsSelected] = useState([]);
+  const [options, setOptionsSelected] = useState([]);
+  const [choices, setChoicesSelected] = useState([]);
 
   //helpers
   const getData = () => {
@@ -23,10 +24,15 @@ const App = () => {
       .catch((err) => console.log(err, "you have an error"));
   };
 
-  const handleSelection = (event) => {
-    console.log('clicking')
+  const handleSelection = (event, columnName, listNumber) => {
+    console.log("clicking", columnName, listNumber);
     
-  }
+    if (columnName === "selections") {
+      let selectedItems = data.sections[listNumber].items.map((item) => item.title);
+      setItemsSelected(selectedItems);
+    }
+
+  };
 
   //useEffect hook to initialize data from API endpoint
   useEffect(() => {
@@ -41,6 +47,7 @@ const App = () => {
         <div className="col1">
           <ListComponent
             title={"Menu Selection"}
+            columnName={"selections"}
             items={selections}
             handleSelection={handleSelection}
           />
@@ -48,19 +55,27 @@ const App = () => {
         <div className="col2">
           <ListComponent
             title={"Items"}
-            items={[]}
+            columnName={"items"}
+            items={items}
             nextCategory={"options"}
+            handleSelection={handleSelection}
           />
         </div>
         <div className="col3">
           <ListComponent
             title={"Item Options"}
-            items={[]}
-            nextCategory={"choices"}
+            columnName={"options"}
+            items={options}
+            handleSelection={handleSelection}
           />
         </div>
         <div className="col4">
-          <ListComponent title={"Option Choices"} items={[]} />
+          <ListComponent
+            title={"Option Choices"}
+            columnName={"choices"}
+            items={choices}
+            handleSelection={handleSelection}
+          />
         </div>
       </div>
     </div>

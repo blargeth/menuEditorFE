@@ -36,6 +36,25 @@ app.get("/menuTest", function (req, res) {
               },
             ],
           },
+          {
+            title: "Pizza",
+            price: 12,
+            options: [
+              {
+                name: "Toppings",
+                choices: [
+                  {
+                    name: "Pepperoni",
+                    price: 2,
+                  },
+                  {
+                    name: "Mushroom",
+                    price: 2,
+                  },
+                ],
+              },
+            ],
+          }
         ],
       },
       {

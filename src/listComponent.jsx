@@ -10,16 +10,20 @@ const ListComponent = (props) => {
         <button>Add</button>
       </div>
       <div className="table">
-        {
-          props.items.map((item) => {
-            c += 1;
-            return (
-              <div className={"table"} onClick={(e) => {props.handleSelection(e)}} key={c}>
-                {item}
-              </div>
-            );
-          })
-        }
+        {props.items.map((item, i) => {
+          c += 1;
+          return (
+            <div
+              className={"table"}
+              onClick={(e) => {
+                props.handleSelection(e, props.columnName, i);
+              }}
+              key={c}
+            >
+              {item}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
