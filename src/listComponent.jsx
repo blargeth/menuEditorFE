@@ -7,7 +7,7 @@ const ListComponent = (props) => {
     <div>
       <div className="menuTitle table">
         {props.title}
-        <button className="addButton">Add</button>
+        <button className="addButton" onClick={(e) => {props.handleAdd(e, props.columnName)}}>Add</button>
       </div>
       <div>
         {props.items.map((item, i) => {
