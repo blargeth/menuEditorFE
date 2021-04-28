@@ -64,21 +64,17 @@ const App = () => {
 
     if (categoryToAdd === "items") {
       setData((prevState) => {
-        let newSections = [
-          ...prevState.sections,
+        prevState.sections[indexTracker.s].items = [
+          ...prevState.sections[indexTracker.s].items,
           {
-            name: newItemInput,
-            items: [
+            title: newItemInput,
+            options: [
             ],
           },
         ];
 
-        return {
-          ...prevState,
-          sections: newSections,
-        };
-      });
-    }
+        return prevState;
+    });}
 
     let selectionNames = data.sections.map((item) => item.name);
     setSelections(selectionNames);
