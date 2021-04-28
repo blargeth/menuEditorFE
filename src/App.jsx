@@ -32,7 +32,6 @@ const App = () => {
   };
 
   const handleSelection = (event, columnName, listNumber) => {
-    console.log("clicking", columnName, listNumber);
     
     if (columnName === "selections") {
       let selectedItems = data.sections[listNumber].items.map((item) => item.title);
