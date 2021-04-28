@@ -1,3 +1,35 @@
-* {
-    color: royalblue;
+
+.menuEditor {
+    display: grid; 
+    border: 1px solid black;
+}
+
+.tableComponent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .col1 { grid-area: 1 / 1 / 2 / 2; }
+    .col2 { grid-area: 1 / 2 / 2 / 3; }
+    .col3 { grid-area: 1 / 3 / 2 / 4; }
+    .col4 { grid-area: 1 / 4 / 2 / 5; }
+
+.menuTitle {
+    font-weight:bold;
+}
+
+.table {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: coral;
+}
+
+.addButton{
+    cursor: pointer;
 }
