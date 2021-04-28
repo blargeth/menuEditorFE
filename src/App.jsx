@@ -82,6 +82,7 @@ const App = () => {
             columnName={"selections"}
             items={selections}
             handleSelection={handleSelection}
+            indexTracker={indexTracker.s}
           />
         </div>
         <div className="col2">
@@ -91,6 +92,7 @@ const App = () => {
             items={items}
             nextCategory={"options"}
             handleSelection={handleSelection}
+            indexTracker={indexTracker.i}
           />
         </div>
         <div className="col3">
@@ -99,6 +101,7 @@ const App = () => {
             columnName={"options"}
             items={options}
             handleSelection={handleSelection}
+            indexTracker={indexTracker.o}
           />
         </div>
         <div className="col4">
@@ -107,6 +110,7 @@ const App = () => {
             columnName={"choices"}
             items={choices}
             handleSelection={handleSelection}
+            indexTracker={indexTracker.c}
           />
         </div>
       </div>

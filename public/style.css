@@ -23,8 +23,13 @@
 
 .table {
     border: 1px solid black;
+    cursor: pointer;
 }
 
 .selected {
     background-color: coral;
+}
+
+.addButton{
+    cursor: pointer;
 }
