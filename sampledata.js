@@ -68,7 +68,7 @@ exports.SAMPLE_DATA = {
                   price: 2,
                 },
               ],
-            }
+            },
           ],
         },
         {
@@ -102,7 +102,7 @@ exports.SAMPLE_DATA = {
               ],
             },
           ],
-        }
+        },
       ],
     },
     {
@@ -137,7 +137,7 @@ exports.SAMPLE_DATA = {
                   price: 1,
                 },
               ],
-            }
+            },
           ],
         },
       ],
